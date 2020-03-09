@@ -19,7 +19,7 @@ public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
     void Update()
     {
-        Debug.Log("Horizontal value is" + valueX + "Vertical value is" + valueY);
+        //Debug.Log("Horizontal value is" + valueX + "Vertical value is" + valueY);
     }
 
     public void OnDrag(PointerEventData eventData)

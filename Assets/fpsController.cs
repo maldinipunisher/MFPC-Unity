@@ -5,7 +5,7 @@ public class fpsController : MonoBehaviour
     public virtuaFpslController vfpc;
     public VirtualJoystick virtualjoy; 
 
-    [Range(1, 5)]
+    [Range(0,1)]
     public float Sensitivity;
     [Range(0,1)]
     public float moveSpeed; 

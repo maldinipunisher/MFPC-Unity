@@ -1,30 +1,46 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems; 
+using UnityEngine.EventSystems;
+using System.Collections;
+using System.Collections.Generic;
 
-public class virtuaFpslController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
+public class virtuaFpslController : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     public fpsController fpsController; 
     public float lookVer, lookHor;
-    public Transform Handle;
+    public RectTransform Handle;
+    float time;
 
+    void Start()
+    {
+        //StartCoroutine(Count()); 
+
+    }
     void Update()
     {
+        //Debug.Log(Handle.localPosition); 
+        //Debug.Log(time);
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    { 
+        Handle.transform.localPosition = transform.InverseTransformPoint(eventData.pressPosition);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        lookVer = Input.GetAxisRaw("Mouse Y") * fpsController.Sensitivity;
-        lookHor = Input.GetAxisRaw("Mouse X") * fpsController.Sensitivity;
+        Handle.localPosition += (Vector3)eventData.delta;
+        
+
+        if (eventData.dragging)
+        {
+            lookHor = Input.GetAxisRaw("Mouse X");
+            lookVer = Input.GetAxisRaw("Mouse Y");
+        }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData)
     {
-        Handle.transform.localPosition = transform.InverseTransformPoint(eventData.pressPosition); 
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        lookVer = 0;
         lookHor = 0;
+        lookVer = 0;
     }
 }

@@ -1,5 +1,5 @@
 ## MFPC for Unity
-Now you can make game more easier with this asset. this asset is for free you can download it on the top. 
+Now you can make game more easier with this asset. this asset is for free you can download it on. 
 
 **Setup :**
 - Use FpsCamera.cs to your desired camera or player

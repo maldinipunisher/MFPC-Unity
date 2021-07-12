@@ -13,4 +13,4 @@ Enjoy!
 
 **View**
 
-![example project](https://github.com/maldinipunisher/MFPC-Unity/blob/master/demo.gif)
+![example project](https://github.com/maldinipunisher/MFPC-Unity/blob/main/demo.gif)
